@@ -13,7 +13,7 @@
       width: 100%;
     }
   </style>
-  
+
   <!-- importing the css and libraries for esri.js -->
   <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css" />
   <script src="https://js.arcgis.com/4.26/"></script>
@@ -24,8 +24,10 @@
       require([
         "esri/Map",
         "esri/views/MapView",
-        "esri/config" // Add esriConfig here
-      ], (Map, MapView, esriConfig) => {
+        "esri/config",
+        "esri/widgets/Locate",
+        "esri/widgets/Search"
+      ], (Map, MapView, esriConfig, Locate) => {
 
         // Adding in API Key
         esriConfig.apiKey = "AAPKd03d2b0786ed4b72aa540fbc9cbaa258Qe0F34wevIz2pDoQAxSWMS7CWVypkKFS5BegW2yneQnQDEuJiLMpEmVh4pVD99Ko"
@@ -41,7 +43,24 @@
           zoom: 12 // Zoom level
         });
 
+        const locateBtn = new Locate({
+          view: view
+        });
+
+        // Add the locate widget to the top left corner of the view
+        view.ui.add(locateBtn, {
+          position: "top-left"
+        });
+
+        const searchWidget = new Search({
+          view: view
+        });
+
+        //Add the search widget to the top right of the view
+        view.ui.add(searchWidget, {
+          position: "top-right"
       });
+
     });
   </script>
 </head>
