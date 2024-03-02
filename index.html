@@ -32,7 +32,7 @@
         "esri/views/MapView",
         "esri/config" // Add esriConfig here
       ], (Map, MapView, esriConfig) => {
-        
+
         // Adding in API Key
         esriConfig.apiKey = "AAPKd03d2b0786ed4b72aa540fbc9cbaa258Qe0F34wevIz2pDoQAxSWMS7CWVypkKFS5BegW2yneQnQDEuJiLMpEmVh4pVD99Ko"
       
@@ -42,7 +42,9 @@
       
         const view = new MapView({
           container: "viewDiv", // Reference to the DOM node that will contain the view
-          map: map // References the map object
+          map: map, // References the map object
+          center: [-73.9712, 40.7851], // Central Park coords
+          zoom: 12 // Zoom level
         });
 
       });
