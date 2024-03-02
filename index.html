@@ -27,7 +27,7 @@
         "esri/config",
         "esri/widgets/Locate",
         "esri/widgets/Search"
-      ], (Map, MapView, esriConfig, Locate) => {
+      ], (Map, MapView, esriConfig, Locate, Search) => {
 
         // Adding in API Key
         esriConfig.apiKey = "AAPKd03d2b0786ed4b72aa540fbc9cbaa258Qe0F34wevIz2pDoQAxSWMS7CWVypkKFS5BegW2yneQnQDEuJiLMpEmVh4pVD99Ko"
@@ -59,8 +59,9 @@
         //Add the search widget to the top right of the view
         view.ui.add(searchWidget, {
           position: "top-right"
-      });
+        });
 
+      });
     });
   </script>
 </head>
