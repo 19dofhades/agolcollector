@@ -47,6 +47,15 @@
           view: view
         });
 
+        // Create featurelayer from feature services
+        const layer = new FeatureLayer({
+          // URL to the service
+          url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/survey123_c3ec9a0f4bf24024909d703ad7486c7b_results/FeatureServer"
+        });
+
+        //adding layer to the map
+        map.add(layer);
+
         // Add the locate widget to the top left corner of the view
         view.ui.add(locateBtn, {
           position: "top-left"
