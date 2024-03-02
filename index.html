@@ -25,8 +25,14 @@
 
     <!-- loading the modules -->
     <script>
-      require([ "esri/Map", "esri/views/MapView", "esri/config" ], (Map, MapView, esriConfig) => {
-
+      
+      document.addEventListener("DOMContentLoaded", function() {
+      require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/config" // Add esriConfig here
+      ], (Map, MapView, esriConfig) => {
+        
         // Adding in API Key
         esriConfig.apiKey = "AAPKd03d2b0786ed4b72aa540fbc9cbaa258Qe0F34wevIz2pDoQAxSWMS7CWVypkKFS5BegW2yneQnQDEuJiLMpEmVh4pVD99Ko"
       
